@@ -29,6 +29,6 @@ public class Book implements Comparable<Book>{
 
     @Override
     public int compareTo(Book otherBook) {
-        return Integer.compare(this.publishedYear, otherBook.publishedYear);
+        return Integer.compare(this.publishedYear, otherBook.publishedYear) * -1;
     }
 }
