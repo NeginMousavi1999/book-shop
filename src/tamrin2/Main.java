@@ -22,7 +22,11 @@ public class Main {
     }
 
     public static void main(String[] args) throws SQLException {
-        List<List<Book>> books = bookService.returnAll();
-        books.forEach(System.out::println);
+        List<List<Book>> allBooks = bookService.returnAll();
+        for (List<Book> books : allBooks) {
+            books.forEach(System.out::println);
+            System.out.println("********************************************************************" +
+                    "**************************************************************************");
+        }
     }
 }
