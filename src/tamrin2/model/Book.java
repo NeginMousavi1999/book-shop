@@ -6,7 +6,7 @@ import lombok.Data;
  * @author Negin Mousavi
  */
 @Data
-public class Book {
+public class Book implements Comparable<Book>{
     private int id;
     private String isbn;
     private String authorName;
@@ -25,5 +25,10 @@ public class Book {
         this.price = price;
         this.soledNumber = soledNumber;
         this.soledTotalPrice = soledNumber * price;
+    }
+
+    @Override
+    public int compareTo(Book otherBook) {
+        return Integer.compare(this.publishedYear, otherBook.publishedYear);
     }
 }
