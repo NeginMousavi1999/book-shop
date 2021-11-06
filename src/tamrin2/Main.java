@@ -1,5 +1,6 @@
 package tamrin2;
 
+import tamrin2.model.Book;
 import tamrin2.service.BookService;
 
 import java.sql.SQLException;
@@ -21,7 +22,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws SQLException {
-        List<String> names = bookService.getAllAuthorsName();
-        names.forEach(System.out::println);
+        List<List<Book>> books = bookService.returnAll();
+        books.forEach(System.out::println);
     }
 }

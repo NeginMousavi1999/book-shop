@@ -18,7 +18,7 @@ public class BookDao extends BaseDao {
     public List<String> getAuthorsName() throws SQLException {
         List<String> names = new ArrayList<>();
         if (connection != null) {
-            String sql = "SELECT `author-name` FROM books;";
+            String sql = "SELECT distinct `author-name` FROM books;";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next())
