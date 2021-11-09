@@ -6,7 +6,7 @@ import lombok.Data;
  * @author Negin Mousavi
  */
 @Data
-public class Book implements Comparable<Book>{
+public class Book implements Comparable<Book> {
     private int id;
     private String isbn;
     private String authorName;

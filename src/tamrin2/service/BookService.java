@@ -21,22 +21,21 @@ public class BookService {
         return bookDao.getAuthorsName();
     }
 
-    public List<Book> getAllBooksByAuthorNameSortedByPublishedYear(String authorName) throws SQLException {
-        List<Book> books = bookDao.findBooksByAuthorName(authorName);
-        return sortBooksByPublishedYear(books);
+    public List<Book> getAllByAuthorNameSorted(String authorName) throws SQLException {
+        List<Book> books = bookDao.findByAuthorName(authorName);
+        return sortByPublishedYear(books);
     }
 
-    public List<Book> sortBooksByPublishedYear(List<Book> books) {
+    public List<Book> sortByPublishedYear(List<Book> books) {
         Collections.sort(books);
         return books;
     }
 
-    public List<List<Book>> returnAll() throws SQLException {//TODO must be rename
+    public List<List<Book>> getAll() throws SQLException {
         List<List<Book>> books = new ArrayList<>();
         List<String> names = getAllAuthorsName();
         for (String name : names)
-            books.add(getAllBooksByAuthorNameSortedByPublishedYear(name));
-
+            books.add(getAllByAuthorNameSorted(name));
         return books;
     }
 }

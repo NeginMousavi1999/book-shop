@@ -27,7 +27,7 @@ public class BookDao extends BaseDao {
         return names;
     }
 
-    public List<Book> findBooksByAuthorName(String authorName) throws SQLException {
+    public List<Book> findByAuthorName(String authorName) throws SQLException {
         List<Book> books = new ArrayList<>();
         if (connection != null) {
             String sql = "SELECT * FROM books WHERE `author-name` = ?;";

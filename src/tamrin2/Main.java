@@ -10,7 +10,6 @@ import java.util.List;
  * @author Negin Mousavi
  */
 public class Main {
-    //    Scanner scanner = new Scanner(System.in);
     static BookService bookService;
 
     static {
@@ -22,20 +21,12 @@ public class Main {
     }
 
     public static void main(String[] args) throws SQLException {
-        List<List<Book>> allBooks = bookService.returnAll();
-        showListSimplyBetter(allBooks);
+        List<List<Book>> allBooks = bookService.getAll();
+        showBooks(allBooks);
 
     }
 
-    public static void showListSimply(List<List<Book>> allBooks) {
-        for (List<Book> books : allBooks) {
-            books.forEach(System.out::println);
-            System.out.println("********************************************************************" +
-                    "**************************************************************************");
-        }
-    }
-
-    public static void showListSimplyBetter(List<List<Book>> allBooks) {
+    public static void showBooks(List<List<Book>> allBooks) {
         System.out.println("********************************************************************" +
                 "**************************************************************************");
         for (List<Book> allBook : allBooks) {
@@ -48,7 +39,8 @@ public class Main {
         }
     }
 
-    public static void showListWithDashAndPlus(List<List<Book>> allBooks) {
+    // گذاشتم که ببینین اینجوری هم پیدا کردم ولی حال نمیکنم باهاش. با همون * بیشتر اوکیم
+    public static void showWithDashAndPlus(List<List<Book>> allBooks) {
         System.out.format("+-----------------+----------+----------------+-----------------+----------+---------------+-------------------+%n");
         System.out.format("| Author name     | ISBN     | Book title     | Published year  |  price   |  Soled number | Soled total price |%n");
         for (List<Book> books : allBooks) {
@@ -66,4 +58,3 @@ public class Main {
         System.out.format("+-----------------+----------+----------------+-----------------+----------+---------------+-------------------+%n");
     }
 }
-
