@@ -22,11 +22,12 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         List<List<Book>> allBooks = bookService.getAll();
-        showBooks(allBooks);
-
+        showWithStars(allBooks);
+        System.out.println();
+        showWithDashAndPlus(allBooks);
     }
 
-    public static void showBooks(List<List<Book>> allBooks) {
+    public static void showWithStars(List<List<Book>> allBooks) {
         System.out.println("********************************************************************" +
                 "**************************************************************************");
         for (List<Book> allBook : allBooks) {
